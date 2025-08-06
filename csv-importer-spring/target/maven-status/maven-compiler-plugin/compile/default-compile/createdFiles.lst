@@ -1,4 +1,5 @@
-com\example\csvimporter\dao\MeteringReadingIntervalDao.class
+com\example\csvimporter\dao\MeteringReadingIntervalDAO.class
+com\example\csvimporter\Main.class
 com\example\csvimporter\model\MeteringReadingInterval.class
 com\example\csvimporter\scheduler\CsvJobScheduler.class
-com\example\csvimporter\service\CsvImportService.class
+com\example\csvimporter\service\CsvReaderService.class

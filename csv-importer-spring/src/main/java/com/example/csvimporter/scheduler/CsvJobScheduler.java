@@ -1,20 +1,19 @@
 package com.example.csvimporter.scheduler;
 
-import com.example.csvimporter.service.CsvImportService;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
-@Component
-public class CsvJobScheduler {
+import com.example.csvimporter.service.CsvReaderService;
 
-    private final CsvImportService importService;
+import java.util.TimerTask;
 
-    public CsvJobScheduler(CsvImportService importService) {
-        this.importService = importService;
+public class CsvJobScheduler extends TimerTask {
+    private final CsvReaderService csvReaderService;
+
+    public CsvJobScheduler(CsvReaderService service) {
+        this.csvReaderService = service;
     }
 
-    @Scheduled(fixedRate = 30000)
-    public void runCsvImportJob() {
-        importService.importCsv("meter_readings.csv");
+    @Override
+    public void run() {
+        csvReaderService.readAndStore("C:\\Users\\Mitu Tiberiu\\Desktop\\Spring_metering_reading_intervals\\csv-importer-spring\\data.csv");
     }
 }
