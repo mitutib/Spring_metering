@@ -22,7 +22,7 @@ public class AppInitializer implements ServletContextListener {
         CsvReaderService csvService = (CsvReaderService) context.getBean("csvService");
 
         timer = new Timer();
-        timer.schedule(new CsvJobScheduler(csvService), 0, 60 * 60 * 1000);
+        timer.schedule(new CsvJobScheduler(csvService), 0,  60 * 1000);
 
         System.out.println("CSV scheduler started...");
     }
